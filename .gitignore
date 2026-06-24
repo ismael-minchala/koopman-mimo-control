@@ -1,0 +1,43 @@
+# ── MATLAB ──────────────────────────────────────────────────────
+# Archivos temporales y de sesión
+*.asv
+*.m~
+matlab.mat
+*.mex*
+*.mexa64
+*.mexmaci64
+*.mexw64
+slprj/
+*.slxc
+*.rtw
+
+# Caché de Simulink
+codegen/
+work/
+
+# Datos de optimización Simulink
+*.rt-win64
+*_quarc_win64/
+
+# ── DATOS (demasiado grandes para git) ──────────────────────────
+# Descargar desde: https://drive.google.com/drive/folders/1PJfk9FfFzaYXfAU78d7J0IUnML7zHtIU
+*/datos/*.mat
+*/datos/*.csv
+*/datos/*.xlsx
+
+# ── SISTEMA OPERATIVO ────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── EDITORES ─────────────────────────────────────────────────────
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── ARCHIVOS DE BLOQUEO ──────────────────────────────────────────
+*.lck
+lockfile.lck
