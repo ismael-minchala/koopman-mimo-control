@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyecto de investigación sobre control tolerante a fallas basado en el operador de Koopman para sistemas MIMO no lineales — Universidad de Cuenca, DEET, 2024–2026." />
+  <meta property="og:title" content="Koopman MIMO Control · UC-DEET Research" />
+  <meta property="og:description" content="Control activo tolerante a fallas basado en el operador de Koopman para sistemas MIMO no lineales — Universidad de Cuenca." />
+  <title>Koopman MIMO Control · UC-DEET Research</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- KaTeX — professional math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false});"></script>
+</head>
+<body>
+
+<!-- ░░ NAVBAR ░░ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-k">K</span><span class="logo-rest">oopman MIMO</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Proyecto</a></li>
+      <li><a href="#results">Logros</a></li>
+      <li><a href="#publications">Publicaciones</a></li>
+      <li><a href="#repository">Repositorio</a></li>
+      <li><a href="#team">Equipo</a></li>
+      <li><a href="#contact" class="nav-cta">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ░░ HERO ░░ -->
+<section id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Universidad de Cuenca · DEET · XX Concurso de Investigación
+    </div>
+
+    <h1 class="hero-title">
+      Control Tolerante a Fallas<br>
+      <span class="gradient-text">basado en el Operador de Koopman</span>
+    </h1>
+    <p class="hero-sub">para sistemas MIMO no lineales · 2024 – 2026</p>
+
+    <div class="hero-equation">
+      <div class="eq-block">
+        <span class="eq-label">Espacio no lineal</span>
+        <div class="keq">\(\dot{x} = f(x) + Bu\)</div>
+      </div>
+      <div class="eq-arrow">
+        <svg width="56" height="18" viewBox="0 0 56 18"><path d="M0 9 H44 M36 2 L44 9 L36 16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="eq-arrow-label">\(\mathcal{K}\)</span>
+      </div>
+      <div class="eq-block">
+        <span class="eq-label">Espacio de Koopman</span>
+        <div class="keq">\(\dot{\varphi} = \mathcal{K}\varphi\)</div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat">
+        <span class="hstat-num" data-target="5" data-suffix="">0</span>
+        <span class="hstat-label">Artículos</span>
+      </div>
+      <div class="hstat-divider"></div>
+      <div class="hstat">
+        <span class="hstat-num" data-target="2" data-suffix="">0</span>
+        <span class="hstat-label">Tesis</span>
+      </div>
+      <div class="hstat-divider"></div>
+      <div class="hstat">
+        <span class="hstat-num" data-target="12" data-suffix="+">0</span>
+        <span class="hstat-label">Algoritmos</span>
+      </div>
+      <div class="hstat-divider"></div>
+      <div class="hstat">
+        <span class="hstat-num" data-target="100" data-suffix="%">0</span>
+        <span class="hstat-label">Completado</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#publications" class="btn btn-primary">Ver Publicaciones</a>
+      <a href="#repository" class="btn btn-ghost">Repositorio ↓</a>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-hint" aria-label="Ir a la sección del proyecto">
+    <span>Explorar</span>
+    <div class="scroll-bar"></div>
+  </a>
+</section>
+
+<!-- ░░ ABOUT ░░ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">El Proyecto</span>
+      <h2>Sobre la Investigación</h2>
+      <p class="section-desc">
+        Un proyecto de investigación básica, multidisciplinar, de alcance internacional,
+        para el desarrollo de metodologías de control no lineal basadas en el paradigma del operador de Koopman.
+      </p>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p class="lead">
+          Los sistemas MIMO no lineales son ubicuos en ingeniería —desde procesos industriales
+          hasta robótica y biomédica— pero su control representa un desafío abierto,
+          especialmente cuando el sistema opera en condiciones degradadas o con fallas.
+        </p>
+        <p>
+          El <strong>operador de Koopman</strong> ofrece una representación lineal global de
+          dimensión infinita para sistemas dinámicos no lineales. Aprovechando técnicas de
+          descomposición modal dinámica (DMD/EDMD) y aprendizaje automático, este proyecto
+          construye un marco metodológico integral para identificar, modelar y controlar
+          sistemas MIMO complejos usando exclusivamente datos de operación.
+        </p>
+        <p>
+          La validación experimental se realizó en el <em>Laboratorio de sistemas de control del
+          Departamento de Ingeniería Eléctrica, Electrónica y Telecomunicaciones</em>
+          de la Universidad de Cuenca, con el sistema multitanque semiindustrial como banco de pruebas principal.
+        </p>
+        <div class="kw-list">
+          <span class="kw">Operador de Koopman</span>
+          <span class="kw">Control MIMO</span>
+          <span class="kw">Tolerancia a Fallas</span>
+          <span class="kw">EDMD / Hankel-DMD</span>
+          <span class="kw">MPC</span>
+          <span class="kw">Data-Driven</span>
+          <span class="kw">Digital Twin</span>
+          <span class="kw">OPC UA</span>
+        </div>
+      </div>
+
+      <div class="about-meta reveal">
+        <div class="meta-card">
+          <span class="meta-icon">🏛️</span>
+          <div>
+            <h5>Institución</h5>
+            <p>Universidad de Cuenca<br>DEET — Facultad de Ingeniería</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <span class="meta-icon">📅</span>
+          <div>
+            <h5>Período</h5>
+            <p>1 marzo 2024 – 28 febrero 2026<br>24 meses de investigación</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <span class="meta-icon">💰</span>
+          <div>
+            <h5>Financiamiento</h5>
+            <p>Financiado por el Vicerrectorado de Investigación de la Universidad de Cuenca (VIUC)</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <span class="meta-icon">🔬</span>
+          <div>
+            <h5>Tipo</h5>
+            <p>Investigación básica<br>Alcance internacional</p>
+          </div>
+        </div>
+        <div class="meta-card meta-card--wide">
+          <span class="meta-icon">🔑</span>
+          <div>
+            <h5>Palabras clave</h5>
+            <p>Koopman · Control · Detección · Fallas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Questions -->
+    <div class="rq-block reveal">
+      <h3 class="subsection-title">Preguntas de Investigación</h3>
+      <div class="rq-grid">
+        <div class="rq-card">
+          <div class="rq-n">01</div>
+          <p>¿Cómo pueden las metodologías basadas en Koopman mejorar el rendimiento de sistemas MIMO frente a controladores lineales tradicionales (PID, espacio de estados), especialmente en escenarios de falla?</p>
+        </div>
+        <div class="rq-card">
+          <div class="rq-n">02</div>
+          <p>¿En qué medida el operador de Koopman puede gestionar la incertidumbre del modelo para mejorar la estabilidad y robustez de sistemas MIMO en operación degrada?</p>
+        </div>
+        <div class="rq-card">
+          <div class="rq-n">03</div>
+          <p>¿Cómo contribuye el paradigma de Koopman a simplificar el diseño e implementación de controladores no lineales en robótica, procesos industriales e ingeniería biomédica?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Objectives -->
+    <div class="obj-block reveal">
+      <h3 class="subsection-title">Objetivos Específicos — todos completados al 100 %</h3>
+      <div class="obj-list">
+        <div class="obj-item">
+          <div class="obj-check">✓</div>
+          <div>
+            <strong>Comparación de rendimiento</strong>
+            <p>Investigar y comparar controladores basados en Koopman frente a controladores lineales clásicos en situaciones de operación en rangos extensos.</p>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-check">✓</div>
+          <div>
+            <strong>Robustez ante incertidumbres y fallas</strong>
+            <p>Evaluar la capacidad de Koopman para gestionar incertidumbres del modelo y operar correctamente cuando existen fallas en el sistema.</p>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-check">✓</div>
+          <div>
+            <strong>Simplificación del diseño de control</strong>
+            <p>Analizar el impacto de Koopman en la reducción de complejidad del diseño e implementación de estrategias de control avanzadas.</p>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-check">✓</div>
+          <div>
+            <strong>Validación experimental — Sistema Multitanque</strong>
+            <p>Verificación de la metodología con datos reales del sistema multitanque del Laboratorio de sistemas de control de la UC.</p>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-check">✓</div>
+          <div>
+            <strong>Gemelo digital con OPC UA</strong>
+            <p>Desarrollo de un Digital Twin del sistema multitanque con interoperabilidad OPC UA y control y visualización en tiempo real (reorientación exitosa de la validación robótica inicial).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ METHODOLOGY ░░ -->
+<section id="methodology" class="section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Cómo lo hicimos</span>
+      <h2>Metodología</h2>
+    </div>
+    <div class="method-grid">
+      <div class="method-card reveal">
+        <div class="method-num">01</div>
+        <div class="method-icon">📚</div>
+        <h4>Revisión Bibliográfica</h4>
+        <p>Estado del arte en control MIMO no lineal, DMD, EDMD y el paradigma del operador de Koopman.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-num">02</div>
+        <div class="method-icon">🔢</div>
+        <h4>Modelado y Simulación</h4>
+        <p>Modelos de sistemas no lineales (multitanque, péndulo de Furuta) en MATLAB/Simulink con identificación paramétrica.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-num">03</div>
+        <div class="method-icon">🧪</div>
+        <h4>Implementación Experimental</h4>
+        <p>Experimentos en el Laboratorio de sistemas de control UC con el sistema multitanque real y comunicación industrial.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-num">04</div>
+        <div class="method-icon">📊</div>
+        <h4>Análisis de Datos</h4>
+        <p>Comparación de controladores mediante índices ITAE/IAE e incertidumbre estadística de modelos surrogados.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-num">05</div>
+        <div class="method-icon">⚡</div>
+        <h4>Koopman Aplicado</h4>
+        <p>EDMD, Hankel-DMD y machine learning para la identificación de eigenfunciones y diseño de controladores MPC.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="method-num">06</div>
+        <div class="method-icon">🌍</div>
+        <h4>Divulgación y Transferencia</h4>
+        <p>Publicaciones en revistas indexadas Scopus/WoS, tesis de posgrado y taller internacional de transferencia tecnológica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RESULTS ░░ -->
+<section id="results">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Lo que logramos</span>
+      <h2>Resultados y Logros</h2>
+      <p class="section-desc">
+        Al cierre del proyecto, la totalidad de las actividades planificadas fueron cumplidas dentro de los plazos previstos.
+      </p>
+    </div>
+
+    <div class="results-bar reveal">
+      <div class="rs">
+        <div class="rs-num" data-target="4" data-suffix="">0</div>
+        <div class="rs-lbl">Artículos publicados</div>
+        <div class="rs-sub">IEEE · MDPI · Franklin Inst.</div>
+      </div>
+      <div class="rs-sep"></div>
+      <div class="rs">
+        <div class="rs-num" data-target="1" data-suffix="">0</div>
+        <div class="rs-lbl">En revisión</div>
+        <div class="rs-sub">IEEE Trans. CST (Q1)</div>
+      </div>
+      <div class="rs-sep"></div>
+      <div class="rs">
+        <div class="rs-num" data-target="2" data-suffix="">0</div>
+        <div class="rs-lbl">Tesis concluidas</div>
+        <div class="rs-sub">1 Maestría · 1 Pregrado</div>
+      </div>
+      <div class="rs-sep"></div>
+      <div class="rs">
+        <div class="rs-num" data-target="12" data-suffix="+">0</div>
+        <div class="rs-lbl">Algoritmos</div>
+        <div class="rs-sub">EDMD · MPC · FDD · DT</div>
+      </div>
+      <div class="rs-sep"></div>
+      <div class="rs">
+        <div class="rs-num" data-target="100" data-suffix="%">0</div>
+        <div class="rs-lbl">Cumplimiento</div>
+        <div class="rs-sub">Todas las actividades</div>
+      </div>
+    </div>
+
+    <div class="highlights reveal">
+      <div class="hl-card">
+        <span class="hl-icon">🏆</span>
+        <h4>Revisión Comprensiva — Franklin Institute</h4>
+        <p>Artículo de revisión publicado en el <em>Journal of the Franklin Institute</em> (Scopus Q1). Unifica 90 años de historia del operador de Koopman, desde Bernard Koopman (1931) hasta EDMD y deep learning actuales.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">📐</span>
+        <h4>Hankel-DMD con Lifting — MDPI Mathematics</h4>
+        <p>Nuevo método para la representación lineal de sistemas MIMO forzados publicado en <em>Mathematics</em> (MDPI, Q1/Q2). Especialmente robusto con históricos de datos reducidos.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🌐</span>
+        <h4>Digital Twin con OPC UA</h4>
+        <p>Gemelo digital del sistema multitanque con interoperabilidad OPC UA para control y visualización en tiempo real. Publicado en <em>IEEE 2025</em>.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🔍</span>
+        <h4>Detección de Fallas Experimental</h4>
+        <p>Comparación experimental de técnicas FDI basadas en filtro de Kalman y espacios de paridad en el sistema multitanque real. Publicado en <em>IEEE ETCM 2024</em>.</p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🇨🇳</span>
+        <h4>Taller Internacional — China</h4>
+        <p>Sesión invitada de transferencia de tecnología en la <em>Chongqing Technology and Business University (CTBU)</em>, China, como parte de un curso internacional, Abril 2026.
+          <a href="https://www.youtube.com/watch?v=_pjC5g7r3QI" target="_blank" rel="noopener" class="hl-link">Ver video →</a>
+        </p>
+      </div>
+      <div class="hl-card">
+        <span class="hl-icon">🎯</span>
+        <h4>MPC basado en Koopman — Sometido IEEE Trans. CST</h4>
+        <p>Control predictivo mediante identificación del operador Koopman con conjuntos no recurrentes restringidos. Artículo sometido a <em>IEEE Transactions on Control Systems Technology</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PUBLICATIONS ░░ -->
+<section id="publications" class="section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Producción Científica</span>
+      <h2>Publicaciones</h2>
+    </div>
+
+    <div class="pub-list">
+
+      <div class="pub-card reveal">
+        <div class="pub-header">
+          <span class="pub-badge badge-q1">Artículo · Q1</span>
+          <span class="pub-badge badge-year">2025</span>
+          <span class="pub-badge badge-scopus">Scopus · WoS</span>
+        </div>
+        <h3>Control based on the Koopman operator: A comprehensive review</h3>
+        <p class="pub-authors">L.&nbsp;I. Minchala-Avila, A.&nbsp;Araujo, L.&nbsp;E. Garza-Castañón, <em>et al.</em></p>
+        <p class="pub-venue">Journal of the Franklin Institute, vol.&nbsp;362, no.&nbsp;8, art.&nbsp;108256</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1016/j.jfranklin.2025.108256" target="_blank" rel="noopener" class="pub-doi">DOI: 10.1016/j.jfranklin.2025.108256 →</a>
+        </div>
+      </div>
+
+      <div class="pub-card reveal">
+        <div class="pub-header">
+          <span class="pub-badge badge-q1">Artículo · Q1/Q2</span>
+          <span class="pub-badge badge-year">2026</span>
+          <span class="pub-badge badge-scopus">Scopus · WoS</span>
+        </div>
+        <h3>Data-Driven Linear Representations of Forced Nonlinear MIMO Systems via Hankel Dynamic Mode Decomposition with Lifting</h3>
+        <p class="pub-authors">L.&nbsp;I. Minchala-Avila, M.&nbsp;Villarreal-Esquivel, <em>et al.</em></p>
+        <p class="pub-venue">Mathematics (MDPI), vol.&nbsp;14, no.&nbsp;4, art.&nbsp;625</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.3390/math14040625" target="_blank" rel="noopener" class="pub-doi">DOI: 10.3390/math14040625 →</a>
+        </div>
+      </div>
+
+      <div class="pub-card reveal">
+        <div class="pub-header">
+          <span class="pub-badge badge-ieee">Conf. IEEE</span>
+          <span class="pub-badge badge-year">2025</span>
+          <span class="pub-badge badge-scopus">IEEE Xplore</span>
+        </div>
+        <h3>Digital Twin Framework for Multi-Tank Systems with OPC UA Interoperability and Real-Time Control and Visualization</h3>
+        <p class="pub-authors">L.&nbsp;I. Minchala-Avila, L.&nbsp;A. Andrade-Matute, <em>et al.</em></p>
+        <p class="pub-venue">IEEE Xplore Digital Library, 2025</p>
+        <div class="pub-footer">
+          <a href="https://ieeexplore.ieee.org/abstract/document/11304457" target="_blank" rel="noopener" class="pub-doi">IEEE Xplore →</a>
+        </div>
+      </div>
+
+      <div class="pub-card reveal">
+        <div class="pub-header">
+          <span class="pub-badge badge-ieee">Conf. IEEE</span>
+          <span class="pub-badge badge-year">2024</span>
+          <span class="pub-badge badge-scopus">IEEE Xplore</span>
+        </div>
+        <h3>An Experimental Comparison of Model-Based Fault Detection and Isolation Techniques in a Multi-Tank System</h3>
+        <p class="pub-authors">L.&nbsp;I. Minchala-Avila, J.&nbsp;F. Durán-Siguenza, <em>et al.</em></p>
+        <p class="pub-venue">IEEE ETCM 2024</p>
+        <div class="pub-footer">
+          <a href="https://doi.org/10.1109/ETCM63562.2024.10746149" target="_blank" rel="noopener" class="pub-doi">DOI: 10.1109/ETCM63562.2024.10746149 →</a>
+        </div>
+      </div>
+
+      <div class="pub-card pub-card--pending reveal">
+        <div class="pub-header">
+          <span class="pub-badge badge-review">⏳ En revisión · Q1</span>
+          <span class="pub-badge badge-year">2026</span>
+        </div>
+        <h3>Data-Driven Model Predictive Control based on Koopman Identification Via Constrained Non-Recurrent Sets</h3>
+        <p class="pub-authors">L.&nbsp;I. Minchala-Avila, <em>et al.</em></p>
+        <p class="pub-venue">IEEE Transactions on Control Systems Technology — <em>bajo evaluación</em></p>
+        <div class="pub-footer">
+          <span class="pub-status">Sometido · Bajo revisión por pares</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ THESES ░░ -->
+<section id="theses">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Formación Académica</span>
+      <h2>Tesis Concluidas</h2>
+    </div>
+    <div class="thesis-grid">
+      <div class="thesis-card reveal">
+        <div class="thesis-level">Tesis de Maestría · MCIE</div>
+        <h3>Modelamiento aproximado de sistemas dinámicos a través del operador de Koopman</h3>
+        <div class="thesis-meta">
+          <div><strong>Autor:</strong> Ing. Marcos Lenin Villarreal Esquivel</div>
+          <div><strong>Director:</strong> Dr. Luis Ismael Minchala Ávila</div>
+          <div><strong>Concluida:</strong> Junio 2025</div>
+        </div>
+        <p class="thesis-desc">
+          Formalización del algoritmo EDMD para el modelamiento aproximado de sistemas no lineales,
+          con validación experimental en el sistema multitanque. Relacionada con el artículo Hankel-DMD
+          publicado en Mathematics (MDPI).
+        </p>
+      </div>
+      <div class="thesis-card reveal">
+        <div class="thesis-level">Trabajo de Titulación · IET</div>
+        <h3>Desarrollo e implementación de un gemelo digital (DT) de un sistema multitanques</h3>
+        <div class="thesis-meta">
+          <div><strong>Autor:</strong> Luis Antonio Andrade Matute</div>
+          <div><strong>Director:</strong> Dr. Luis Ismael Minchala Ávila</div>
+          <div><strong>Concluida:</strong> Septiembre 2025</div>
+        </div>
+        <p class="thesis-desc">
+          Diseño e implementación de un gemelo digital del sistema multitanque del laboratorio de
+          automatización UC con protocolo OPC UA, habilitando monitoreo, control y visualización en
+          tiempo real. Relacionada con el artículo publicado en IEEE Xplore 2025.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ REPOSITORY ░░ -->
+<section id="repository" class="section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Ciencia Abierta</span>
+      <h2>Repositorio de Código y Datos</h2>
+      <p class="section-desc">
+        Los algoritmos, modelos matemáticos y bases de datos generados durante el proyecto están disponibles
+        para la comunidad científica. Implementaciones en MATLAB.
+      </p>
+    </div>
+
+    <div class="repo-grid">
+      <div class="repo-card reveal">
+        <div class="repo-icon">⚙️</div>
+        <h4>Algoritmos Koopman</h4>
+        <ul class="repo-list">
+          <li>EDMD — Estimación del operador via funciones de elevación</li>
+          <li>Hankel-DMD con lifting para datos escasos</li>
+          <li>Identificación no lineal dispersa (SINDy)</li>
+          <li>MPC bilineal basado en Koopman (multitanque)</li>
+          <li>Estimación Koopman para estructuras polinomiales</li>
+        </ul>
+      </div>
+      <div class="repo-card reveal">
+        <div class="repo-icon">🔎</div>
+        <h4>Detección y Diagnóstico de Fallas</h4>
+        <ul class="repo-list">
+          <li>FDI con filtro óptimo de Kalman</li>
+          <li>FDI con espacios de paridad</li>
+          <li>MPC con detección de fallas integrada</li>
+          <li>Algoritmo MPC en lenguaje SCL para PLC Simatic S7-1500</li>
+          <li>Tres variantes de sintonización del controlador MPC</li>
+        </ul>
+      </div>
+      <div class="repo-card reveal">
+        <div class="repo-icon">🏭</div>
+        <h4>Modelos y Bases de Datos</h4>
+        <ul class="repo-list">
+          <li>Modelo ODE del sistema multitanque (MATLAB/Simulink)</li>
+          <li>Péndulo de Furuta — sistema no lineal MIMO subactuado</li>
+          <li>Base de datos multitanque en lazo abierto</li>
+          <li>Gemelo digital con interoperabilidad OPC UA</li>
+          <li>Modelos matemáticos en software especializado</li>
+        </ul>
+      </div>
+      <div class="repo-card reveal">
+        <div class="repo-icon">📖</div>
+        <h4>Material Didáctico</h4>
+        <ul class="repo-list">
+          <li>Revisión del estado del arte (borrador / pre-print)</li>
+          <li>Presentaciones: identificación de sistemas basada en datos</li>
+          <li>Material del taller internacional CTBU-China</li>
+          <li>Algoritmo de control MPC para sistema multitanque base</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="repo-actions reveal">
+      <a href="https://drive.google.com/drive/folders/1PJfk9FfFzaYXfAU78d7J0IUnML7zHtIU?usp=sharing"
+         target="_blank" rel="noopener" class="btn btn-primary">
+        📁 Acceder al Repositorio (Google Drive)
+      </a>
+      <a href="https://www.youtube.com/watch?v=_pjC5g7r3QI"
+         target="_blank" rel="noopener" class="btn btn-ghost">
+        ▶ Taller Internacional (Video)
+      </a>
+      <a href="https://sites.google.com/ucuenca.edu.ec/seminariodeet2026/inicio"
+         target="_blank" rel="noopener" class="btn btn-ghost">
+        🔗 Seminario DEET 2026
+      </a>
+    </div>
+
+    <div class="repo-note reveal">
+      <strong>Nota:</strong> Este repositorio se encuentra en Google Drive. Una migración a GitHub está planificada.
+      Para acceso anticipado a código específico, contactar directamente al director del proyecto.
+    </div>
+  </div>
+</section>
+
+<!-- ░░ TEAM ░░ -->
+<section id="team">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Las personas detrás</span>
+      <h2>Equipo de Investigación</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card team-lead reveal">
+        <div class="team-avatar"><img src="photos/IMA.jpg" alt="Dr. Luis Ismael Minchala Ávila"></div>
+        <div class="team-body">
+          <span class="team-role">Director del Proyecto</span>
+          <h4>Dr. Luis Ismael Minchala Ávila</h4>
+          <p>Profesor-investigador, DEET, Universidad de Cuenca. Investigador principal en control de sistemas no lineales y operador de Koopman. Titular del proyecto.</p>
+          <a href="mailto:ismael.minchala@ucuenca.edu.ec" class="team-mail">ismael.minchala@ucuenca.edu.ec</a>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar"><img src="photos/AAP.jpg" alt="Alcides Fabián Araujo Pacheco"></div>
+        <div class="team-body">
+          <span class="team-role">Investigador</span>
+          <h4>Alcides Fabián Araujo Pacheco</h4>
+          <p>Investigador del DEET. Contribuyó al análisis funcional y metodología de control basada en Koopman.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar"><img src="photos/LGC.jpeg" alt="Dr. Luis Eduardo Garza Castañón"></div>
+        <div class="team-body">
+          <span class="team-role">Investigador Asociado</span>
+          <h4>Dr. Luis Eduardo Garza Castañón</h4>
+          <p>Investigador asociado internacional, especialista en sistemas de control y diagnóstico de fallas.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar"><img src="photos/JFD.jpeg" alt="Juan Francisco Durán Siguenza"></div>
+        <div class="team-body">
+          <span class="team-role">Técnico de Investigación</span>
+          <h4>Juan Francisco Durán Siguenza</h4>
+          <p>Responsable de mantenimiento y operación experimental del sistema multitanque en el laboratorio de automatización UC.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">MLV</div>
+        <div class="team-body">
+          <span class="team-role">Tesista de Maestría (MCIE)</span>
+          <h4>Ing. Marcos Lenin Villarreal Esquivel</h4>
+          <p>Tesis sobre modelamiento aproximado mediante el operador de Koopman. Publicación en Mathematics MDPI.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">LAA</div>
+        <div class="team-body">
+          <span class="team-role">Tesista de Pregrado (IET)</span>
+          <h4>Luis Antonio Andrade Matute</h4>
+          <p>Desarrolló el gemelo digital del sistema multitanque con OPC UA. Publicación en IEEE Xplore 2025.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar"><img src="photos/AMJ.jpeg" alt="Ariel Josue Molina Jara"></div>
+        <div class="team-body">
+          <span class="team-role">Ayudante de Investigación</span>
+          <h4>Ariel Josue Molina Jara</h4>
+          <p>Apoyo en implementación de algoritmos de control y experimentos en el laboratorio de sistemas de control.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="assistants reveal">
+      <h5>Ayudantes de Investigación</h5>
+      <p>Karla Victoria Barrera Saavedra &nbsp;·&nbsp; Diego Enmanuel Zarie Bonilla</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CONTACT ░░ -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div class="contact-left">
+        <h2>¿Interesado en colaborar?</h2>
+        <p>
+          Para consultas sobre el proyecto, solicitudes de acceso a datos o código,
+          propuestas de colaboración de investigación o información sobre los resultados,
+          no dude en escribirnos.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:ismael.minchala@ucuenca.edu.ec" class="clink">
+            <span>✉</span>
+            ismael.minchala@ucuenca.edu.ec
+          </a>
+          <a href="https://sites.google.com/ucuenca.edu.ec/seminariodeet2026/inicio"
+             target="_blank" rel="noopener" class="clink">
+            <span>🔗</span>
+            Seminario de Investigación DEET 2026
+          </a>
+          <a href="https://www.youtube.com/watch?v=_pjC5g7r3QI"
+             target="_blank" rel="noopener" class="clink">
+            <span>▶</span>
+            Taller internacional — Video YouTube
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="math-box">
+          <div class="math-title">Problema de identificación de Koopman</div>
+          <div class="keq-display">
+            \[\min_{A,\,C,\,\Psi(\cdot)}\;\sum_{i=0}^{N-1}
+              \bigl\|\phi_{i+1} - A\phi_i\bigr\|^2
+              + \bigl\|y_i - C\phi_i\bigr\|^2\]
+          </div>
+          <div class="keq-display keq-sub">
+            \[\text{s.a.}\quad \phi_i = \Psi(x_i),\quad \Psi \in \mathcal{F}\]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-k">K</span><span class="logo-rest">oopman MIMO Control</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#about">Proyecto</a>
+        <a href="#results">Logros</a>
+        <a href="#publications">Publicaciones</a>
+        <a href="#repository">Repositorio</a>
+        <a href="#team">Equipo</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Universidad de Cuenca · Departamento de Ingeniería Eléctrica, Electrónica y Telecomunicaciones (DEET)</p>
+      <p>XX Concurso Universitario de Proyectos de Investigación · 2024 – 2026</p>
+      <p class="footer-copy">© 2026 Universidad de Cuenca. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
