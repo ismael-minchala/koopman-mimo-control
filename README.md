@@ -85,7 +85,7 @@ codigo/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/YOUR_USERNAME/koopman-mimo-control.git
+git clone https://github.com/ismael-minchala/koopman-mimo-control
 cd koopman-mimo-control
 ```
 
@@ -174,4 +174,4 @@ MIT License — ver [LICENSE](LICENSE). Al citar el código, por favor referenci
 Dr. Luis Ismael Minchala Ávila  
 Universidad de Cuenca — DEET  
 ✉ ismael.minchala@ucuenca.edu.ec  
-🌐 [Página del Proyecto](https://ismael-minchala.github.io/koopman-mimo-control)
+🌐 [Página del Proyecto](https://ismael-minchala.github.io/koopman-mimo-control/)
