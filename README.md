@@ -4,6 +4,7 @@
 [![Universidad de Cuenca](https://img.shields.io/badge/Universidad%20de%20Cuenca-DEET-blue)](https://www.ucuenca.edu.ec)
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b%2B-orange)](https://www.mathworks.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20836898.svg)](https://doi.org/10.5281/zenodo.20836898)
 
 > **Proyecto:** Control activo tolerante a fallas basado en el operador de Koopman para sistemas MIMO no lineales  
 > **Institución:** Universidad de Cuenca, Departamento de Ingeniería Eléctrica, Electrónica y Telecomunicaciones (DEET)  
@@ -85,7 +86,7 @@ codigo/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/ismael-minchala/koopman-mimo-control
+git clone https://github.com/ismael-minchala/koopman-mimo-control.git
 cd koopman-mimo-control
 ```
 
@@ -174,4 +175,5 @@ MIT License — ver [LICENSE](LICENSE). Al citar el código, por favor referenci
 Dr. Luis Ismael Minchala Ávila  
 Universidad de Cuenca — DEET  
 ✉ ismael.minchala@ucuenca.edu.ec  
-🌐 [Página del Proyecto](https://ismael-minchala.github.io/koopman-mimo-control/)
+🌐 [Página del Proyecto](https://ismael-minchala.github.io/koopman-mimo-control)  
+📦 [DOI: 10.5281/zenodo.20836898](https://doi.org/10.5281/zenodo.20836898)
